@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SportFieldsReservation</string>
+    <string name="facebook_app_id">481788682548968</string>
+    <string name="fb_login_protocol_scheme">fb481788682548968</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="join_now">JOIN NOW</string>
+    <string name="loginmessage">loginMessage</string>
 </resources>
