@@ -1,4 +1,7 @@
 package andrei.sold.upt.com.sportfieldsreservation;
 
-public class RegisterActivity {
+import android.support.v7.app.AppCompatActivity;
+
+public class RegisterActivity extends AppCompatActivity {
+
 }

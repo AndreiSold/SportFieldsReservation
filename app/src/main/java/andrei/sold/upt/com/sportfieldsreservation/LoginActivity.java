@@ -1,4 +1,6 @@
 package andrei.sold.upt.com.sportfieldsreservation;
 
-public class LoginActivity {
+import android.support.v7.app.AppCompatActivity;
+
+public class LoginActivity extends AppCompatActivity {
 }
