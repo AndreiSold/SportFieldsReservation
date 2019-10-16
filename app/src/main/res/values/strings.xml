@@ -5,4 +5,5 @@
     <string name="sign_in">SIGN IN</string>
     <string name="join_now">JOIN NOW</string>
     <string name="loginmessage">loginMessage</string>
+    <string name="name">Name</string>
 </resources>
