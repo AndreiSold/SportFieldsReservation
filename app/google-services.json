@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "135869260987",
+    "firebase_url": "https://sportfieldsreser-1570716077837.firebaseio.com",
+    "project_id": "sportfieldsreser-1570716077837",
+    "storage_bucket": "sportfieldsreser-1570716077837.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135869260987:android:6c0d29d5298857b267f59e",
+        "android_client_info": {
+          "package_name": "andrei.sold.upt.com.sportfieldsreservation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "135869260987-u8vifhebrsk0kqda0j0mdii1qn7dfals.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeQwkUIjznZZpyf7cv07ILkEi_V4AZ83Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "135869260987-u8vifhebrsk0kqda0j0mdii1qn7dfals.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

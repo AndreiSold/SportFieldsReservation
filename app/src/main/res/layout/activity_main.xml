@@ -39,7 +39,7 @@
         android:src="@drawable/message_main" />
 
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSignIn"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
         app:strokeColor="#02B875"
         app:strokeWidth="1dp" />
 
-    <android.support.design.button.MaterialButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonJoinNow"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
