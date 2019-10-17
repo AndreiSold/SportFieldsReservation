@@ -39,60 +39,61 @@
         android:contentDescription="@string/loginmessage"
         android:src="@drawable/message_main" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:id="@+id/nameInput"
-        android:layout_width="278dp"
+
+    <EditText
+        android:id="@+id/nameUser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logoMessage"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="65dp"
-        android:contentDescription="@string/name"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/name"
         android:inputType="text" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameInput2"
-        android:layout_width="278dp"
+    <EditText
+        android:id="@+id/numberUser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nameInput"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/nameUser"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="63dp"
-        android:contentDescription="@string/name"
-        android:inputType="text" />
+        android:hint="@string/your_phone_number"
+        android:inputType="numberSigned" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameInput3"
-        android:layout_width="278dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/nameInput2"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="61dp"
-        android:contentDescription="@string/name"
-        android:inputType="text" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameInput4"
-        android:layout_width="278dp"
+    <EditText
+        android:id="@+id/ageUser"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nameInput3"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/numberUser"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="61dp"
-        android:contentDescription="@string/name"
+        android:hint="@string/your_age"
+        android:inputType="numberSigned" />
+
+    <EditText
+        android:id="@+id/locationUser"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ageUser"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:hint="@string/location"
         android:inputType="text" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButtonRegister"
         android:layout_width="201dp"
         android:layout_height="60dp"
-        android:layout_below="@+id/nameInput4"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="68dp"
-        android:text="@string/join_now"
+        android:text="@string/next"
         android:textAlignment="center"
+        android:layout_below="@+id/locationUser"
         android:textSize="15sp"
         app:backgroundTint="#02B875"
         app:cornerRadius="20dp"

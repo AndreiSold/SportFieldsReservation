@@ -6,4 +6,8 @@
     <string name="join_now">JOIN NOW</string>
     <string name="loginmessage">loginMessage</string>
     <string name="name">Name</string>
+    <string name="next">Next</string>
+    <string name="your_phone_number">Your phone number</string>
+    <string name="your_age">Your age</string>
+    <string name="location">Location</string>
 </resources>
