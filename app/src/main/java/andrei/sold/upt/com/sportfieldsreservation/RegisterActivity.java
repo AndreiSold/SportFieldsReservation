@@ -1,5 +1,7 @@
 package andrei.sold.upt.com.sportfieldsreservation;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,14 +12,16 @@ import com.google.android.material.button.MaterialButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import andrei.sold.upt.com.sportfieldsreservation.Models.User;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private DatabaseReference userRef;
+    private DatabaseReference userDatabaseRef;
     private EditText nameUser, ageUser, locationUser, numberUser;
     private MaterialButton nextButton;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,14 +35,17 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         locationUser = (EditText) findViewById(R.id.locationUser);
         numberUser = (EditText) findViewById(R.id.numberUser);
 
-        userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        userDatabaseRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         nextButton.setOnClickListener(this);
+
+        progressDialog = new ProgressDialog(this);
     }
 
     @Override
     public void onClick(View v) {
         registerUser();
+        startActivity(new Intent(this, RegisterCredentialsActivity.class));
     }
 
     private void registerUser() {
@@ -67,6 +74,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, "Please enter your phone number !", Toast.LENGTH_LONG).show();
             return;
         }
+
+        progressDialog.setMessage("Please wait....");
+        progressDialog.show();
+
+        String id = userDatabaseRef.push().getKey();
+        User user = new User(name, number, age, location);
+        userDatabaseRef.child(id).setValue(user);
+
 
     }
 }
