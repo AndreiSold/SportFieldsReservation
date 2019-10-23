@@ -55,33 +55,29 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String location = locationUser.getText().toString().trim();
         String number = numberUser.getText().toString().trim();
 
-        if (TextUtils.isEmpty(name)) {
-            Toast.makeText(this, "Please enter your name!", Toast.LENGTH_LONG).show();
-            return;
-        }
+        if (validateTextBox(name, "Please enter your name!")) return;
 
-        if (TextUtils.isEmpty(age)) {
-            Toast.makeText(this, "Please enter your age!", Toast.LENGTH_LONG).show();
-            return;
-        }
+        if (validateTextBox(age, "Please enter your age!")) return;
 
-        if (TextUtils.isEmpty(location)) {
-            Toast.makeText(this, "Please enter your location!", Toast.LENGTH_LONG).show();
-            return;
-        }
+        if (validateTextBox(location, "Please enter your location!")) return;
 
-        if (TextUtils.isEmpty(number)) {
-            Toast.makeText(this, "Please enter your phone number !", Toast.LENGTH_LONG).show();
-            return;
-        }
+        if (validateTextBox(number, "Please enter your phone number !")) return;
 
         progressDialog.setMessage("Please wait....");
         progressDialog.show();
 
         String id = userDatabaseRef.push().getKey();
-        User user = new User(name, number, age, location);
+        User user = new User(name, number, age, location, "");
         userDatabaseRef.child(id).setValue(user);
 
 
+    }
+
+    private boolean validateTextBox(String name, String s) {
+        if (TextUtils.isEmpty(name)) {
+            Toast.makeText(this, s, Toast.LENGTH_LONG).show();
+            return true;
+        }
+        return false;
     }
 }

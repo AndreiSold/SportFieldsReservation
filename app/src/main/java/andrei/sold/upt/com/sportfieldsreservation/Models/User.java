@@ -6,13 +6,15 @@ public class User {
     private String number;
     private String age;
     private String location;
+    private String email;
 
 
-    public User(String name, String number, String age, String location) {
+    public User(String name, String number, String age, String location, String email) {
         this.name = name;
         this.number = number;
         this.age = age;
         this.location = location;
+        this.email = email;
     }
 
     public String getName() {
@@ -29,5 +31,9 @@ public class User {
 
     public String getLocation() {
         return location;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }
