@@ -23,6 +23,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private MaterialButton nextButton;
     private ProgressDialog progressDialog;
 
+    private String id;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         registerUser();
-        startActivity(new Intent(this, RegisterCredentialsActivity.class));
+        Intent intent = new Intent(this, RegisterCredentialsActivity.class);
+        intent.putExtra("userId", id);
+        startActivity(intent);
     }
 
     private void registerUser() {
@@ -66,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         progressDialog.setMessage("Please wait....");
         progressDialog.show();
 
-        String id = userDatabaseRef.push().getKey();
+        id = userDatabaseRef.push().getKey();
         User user = new User(name, number, age, location, "");
         userDatabaseRef.child(id).setValue(user);
 

@@ -34,6 +34,8 @@ public class RegisterCredentialsActivity extends AppCompatActivity implements Vi
     private EditText emailUser, passwordUser, confirmPasswordUser;
     private Button registerUserButton;
 
+    String userId;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +51,9 @@ public class RegisterCredentialsActivity extends AppCompatActivity implements Vi
         passwordUser = (EditText) findViewById(R.id.passwordUser);
         confirmPasswordUser = (EditText) findViewById(R.id.confirmPasswordUser);
 
+        Intent intent = getIntent();
+        userId = intent.getStringExtra("userId");
+
 
         registerUserButton = (Button) findViewById(R.id.buttonRegister);
         registerUserButton.setOnClickListener(this);
@@ -60,7 +65,7 @@ public class RegisterCredentialsActivity extends AppCompatActivity implements Vi
     }
 
     private void registerUserCredentials() {
-        String email = emailUser.getText().toString().trim();
+        final String email = emailUser.getText().toString().trim();
         String password = passwordUser.getText().toString().trim();
         String confirmPassword = confirmPasswordUser.getText().toString().trim();
 
@@ -76,7 +81,11 @@ public class RegisterCredentialsActivity extends AppCompatActivity implements Vi
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
-                    User user = postSnapshot.getValue(User.class);
+                    if(userId.equals(postSnapshot.getKey())){
+                        User user = postSnapshot.getValue(User.class);
+                        user.setEmail(email);
+                        userRef.child(userId).setValue(user);
+                    }
                 }
             }
 

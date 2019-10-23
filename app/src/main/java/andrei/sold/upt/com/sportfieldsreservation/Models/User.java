@@ -8,6 +8,7 @@ public class User {
     private String location;
     private String email;
 
+    public User(){}
 
     public User(String name, String number, String age, String location, String email) {
         this.name = name;
@@ -36,4 +37,9 @@ public class User {
     public String getEmail() {
         return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 }
+
