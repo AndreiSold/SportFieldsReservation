@@ -48,7 +48,7 @@
         android:layout_below="@+id/logoMessage"
         android:layout_alignParentStart="true"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/name"
         android:background="@drawable/edit_text_shape_states"
         android:inputType="text" />

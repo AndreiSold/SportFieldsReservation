@@ -65,55 +65,59 @@ public class RegisterCredentialsActivity extends AppCompatActivity implements Vi
     }
 
     private void registerUserCredentials() {
+
+        boolean validateFlag = true;
+
         final String email = emailUser.getText().toString().trim();
         String password = passwordUser.getText().toString().trim();
         String confirmPassword = confirmPasswordUser.getText().toString().trim();
 
-        if (validateTextBox(TextUtils.isEmpty(email), "Please enter email!")) return;
+        if (validateTextBox(TextUtils.isEmpty(email), "Please enter email!") ||
+                validateTextBox(TextUtils.isEmpty(email), "Please enter password!") ||
+                validateTextBox(!password.equals(confirmPassword), "Passwords doesn't match!"))
+            validateFlag = false;
 
-        if (validateTextBox(TextUtils.isEmpty(email), "Please enter password!")) return;
-        if (validateTextBox(!password.equals(confirmPassword), "Passwords doesn't match!")) return;
 
         progressDialog.setMessage("Please wait....");
         progressDialog.show();
 
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
-                    if(userId.equals(postSnapshot.getKey())){
-                        User user = postSnapshot.getValue(User.class);
-                        user.setEmail(email);
-                        userRef.child(userId).setValue(user);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            Toast.makeText(RegisterCredentialsActivity.this, "Succes!", Toast.LENGTH_SHORT).show();
-                            finish();
-                            Intent registerIntent = new Intent(getApplicationContext(), SportsActivity.class);
-                            startActivity(registerIntent);
-                        } else {
-                            Toast.makeText(RegisterCredentialsActivity.this, "Account already created!", Toast.LENGTH_LONG).show();
+        if (validateFlag) {
+            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        if (userId.equals(postSnapshot.getKey())) {
+                            User user = postSnapshot.getValue(User.class);
+                            user.setEmail(email);
+                            userRef.child(userId).setValue(user);
                         }
                     }
-                });
+                }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+            firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            progressDialog.dismiss();
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RegisterCredentialsActivity.this, "Succes!", Toast.LENGTH_SHORT).show();
+                                finish();
+                                Intent registerIntent = new Intent(getApplicationContext(), SportsActivity.class);
+                                startActivity(registerIntent);
+                            } else {
+                                Toast.makeText(RegisterCredentialsActivity.this, "Account already created!", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+        }
 
     }
-
 
 
     private boolean validateTextBox(boolean empty, String s) {

@@ -82,32 +82,35 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         registerUser();
-        Intent intent = new Intent(this, RegisterCredentialsActivity.class);
-        intent.putExtra("userId", id);
-        startActivity(intent);
     }
 
     private void registerUser() {
+
+        boolean validateFlag = true;
 
         String name = nameUser.getText().toString().trim();
         String age = birthdateUser.getText().toString().trim();
         String location = locationUser.getText().toString().trim();
         String number = numberUser.getText().toString().trim();
 
-        if (validateTextBox(name, "Please enter your name!")) return;
+        if (validateTextBox(name, "Please enter your name!") ||
+                validateTextBox(age, "Please enter your age!") ||
+                validateTextBox(location, "Please enter your location!") ||
+                validateTextBox(number, "Please enter your phone number !")) validateFlag = false;
 
-        if (validateTextBox(age, "Please enter your age!")) return;
-
-        if (validateTextBox(location, "Please enter your location!")) return;
-
-        if (validateTextBox(number, "Please enter your phone number !")) return;
 
         progressDialog.setMessage("Please wait....");
         progressDialog.show();
 
-        id = userDatabaseRef.push().getKey();
-        User user = new User(name, number, age, location, "");
-        userDatabaseRef.child(id).setValue(user);
+        if(validateFlag){
+            id = userDatabaseRef.push().getKey();
+            User user = new User(name, number, age, location, "");
+            userDatabaseRef.child(id).setValue(user);
+
+            Intent intent = new Intent(this, RegisterCredentialsActivity.class);
+            intent.putExtra("userId", id);
+            startActivity(intent);
+        }
 
 
     }
