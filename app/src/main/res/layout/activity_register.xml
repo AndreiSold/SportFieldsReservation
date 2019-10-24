@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="151dp"
+        android:layout_height="138dp"
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
@@ -20,24 +20,14 @@
 
     <ImageView
         android:id="@+id/sfrText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="103dp"
+        android:layout_height="69dp"
         android:layout_below="@+id/logoImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
+        android:layout_alignEnd="@+id/nextButtonRegister"
+        android:layout_marginTop="-27dp"
+        android:layout_marginEnd="46dp"
         android:contentDescription="@string/loginmessage"
         android:src="@drawable/sfr" />
-
-
-    <ImageView
-        android:id="@+id/logoMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sfrText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/loginmessage"
-        android:src="@drawable/message_main" />
 
 
     <EditText
@@ -45,10 +35,10 @@
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:padding="10dp"
-        android:layout_below="@+id/logoMessage"
+        android:layout_below="@+id/sfrText"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
         android:hint="@string/name"
         android:background="@drawable/edit_text_shape_states"
         android:inputType="text" />
@@ -60,8 +50,8 @@
         android:padding="10dp"
         android:layout_below="@+id/nameUser"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/your_phone_number"
         android:background="@drawable/edit_text_shape_states"
         android:inputType="numberSigned" />
@@ -74,8 +64,8 @@
         android:padding="10dp"
         android:layout_below="@+id/numberUser"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
         android:clickable="true"
         android:editable="false"
         android:background="@drawable/edit_text_shape_states"
@@ -88,16 +78,16 @@
         android:padding="10dp"
         android:layout_below="@+id/birthdateUser"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
         android:hint="@string/location"
         android:background="@drawable/edit_text_shape_states"
         android:inputType="text" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButtonRegister"
-        android:layout_width="201dp"
-        android:layout_height="60dp"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="68dp"
         android:text="@string/next"

@@ -8,44 +8,43 @@
 
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="25dp"
         android:contentDescription="@string/loginmessage"
         android:src="@drawable/logo" />
 
 
     <ImageView
         android:id="@+id/sfrText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="130dp"
+        android:layout_height="110dp"
         android:layout_below="@+id/logoImage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="2dp"
         android:contentDescription="@string/loginmessage"
         android:src="@drawable/sfr" />
 
 
     <ImageView
         android:id="@+id/logoMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="158dp"
+        android:layout_height="48dp"
         android:layout_below="@+id/sfrText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
         android:contentDescription="@string/loginmessage"
         android:src="@drawable/message_main" />
 
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonSignIn"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/logoMessage"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="100dp"
         android:text="@string/sign_in"
         android:textAlignment="center"
         android:textColor="#02B875"
@@ -57,11 +56,11 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonJoinNow"
-        android:layout_width="180dp"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/buttonSignIn"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="@string/join_now"
         android:textAlignment="center"
         android:textSize="15sp"
@@ -72,11 +71,11 @@
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/buttonJoinNow"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="30dp" />
 
 
 </RelativeLayout>

@@ -116,6 +116,9 @@ public class RegisterCredentialsActivity extends AppCompatActivity implements Vi
                         }
                     });
         }
+        else {
+            progressDialog.dismiss();
+        }
 
     }
 

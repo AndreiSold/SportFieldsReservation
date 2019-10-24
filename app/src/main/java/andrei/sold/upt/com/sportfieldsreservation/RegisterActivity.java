@@ -111,6 +111,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             intent.putExtra("userId", id);
             startActivity(intent);
         }
+        else {
+            progressDialog.dismiss();
+        }
 
 
     }
