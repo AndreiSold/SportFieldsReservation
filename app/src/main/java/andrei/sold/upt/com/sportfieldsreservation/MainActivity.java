@@ -66,8 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.buttonSignIn:
                 startActivity(new Intent(this, LoginActivity.class));
+                break;
             case R.id.buttonJoinNow:
                 startActivity(new Intent(this, RegisterActivity.class));
+                break;
 
 
         }
