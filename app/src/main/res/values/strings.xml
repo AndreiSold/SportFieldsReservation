@@ -10,10 +10,10 @@
     <string name="your_phone_number">Your phone number</string>
     <string name="your_age">Your age</string>
     <string name="location">Location</string>
-    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
     <string name="logincaps">LOGIN</string>
     <string name="forgot_password">Forgot password?</string>
+    <string name="email">Email</string>
 
 </resources>
